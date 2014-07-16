@@ -1,26 +1,39 @@
 * {
 	font-family: Arial, sans-serif;
 	font-size: 0.95em;
-	margin: auto;
-	/*border: 1px solid black;*/
+	margin: 0;
 }
 body {
 	background-color: #fff;
 }
+.site, html {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+.site-content {
+	flex: 1;
+	/*ie10 tweener syntax from Philip Walton*/
+	-ms-flex-preferred-size: auto;
+
+	@include breakpoint("large") {
+    padding-top: 2em;
+  	}
+}
 #header {
-	background-color: #CC1B5C;
+	background-color: #cc1b5c;
 	padding: 100px 0 20px 0;
-	margin: 0 auto 10px auto;
+	margin: 0 0 10px 0;
 }
 #header img {
 	display: block;
+	margin: auto;
 }
 #header div {
 	background-color: #fff;
 }
 .nav ul {
 	width: 880px;
-	display: block;	
 	padding: 0;
 	margin: 0 auto;
 	text-align: center;
@@ -29,7 +42,7 @@ body {
 	display: inline-block;
 	height: 45px;
 	width: 150px;
-	background-color: #CC1B5C;
+	background-color: #cc1b5c;
 	color: #fff;
 	font-size: 1.2em;
 	font-weight: bold;
@@ -44,15 +57,14 @@ a {
 }
 li:hover {
 	color: white;
-	background-color: #54DEFF;
+	background-color: #54deff;
 }
 li:active {
 	color: white;
-	background-color: #FFEE3B;
+	background-color: #ffee3b;
 }
 .main {
 	display: block;
-	position: relative;
 	margin: 0 auto;
 	padding: 5px 0;
 	width: 875px;
@@ -78,17 +90,17 @@ h2 {
 	width: 245px;
 }
 #footer {
-	display: block;
-	margin: 10px auto 0 auto;
-	height: 70px;
+	height: 60px;
 	padding-top: 20px;
-	background-color: #CC1B5C;
-	color: white;
+	margin: 10px 0 0 0;	
+	background-color: #cc1b5c;
+	color: #fff;
 	font-size: 0.95em;
 }
 #footer div {
 	height: 60px;
 	width: 875px;
+	margin: auto;
 }
 .address {
 	display: block;
